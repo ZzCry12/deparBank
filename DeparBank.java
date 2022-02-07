@@ -3,9 +3,10 @@ package deparBank;
 import java.util.Scanner;
 
 public class DeparBank {
+
+    static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
         boolean exit = false;
 
         CuentaBancaria cuenta = new CuentaBancaria();
@@ -30,7 +31,7 @@ public class DeparBank {
                 System.out.println("6. Retirada");
                 System.out.println("7. Movimientos");
                 System.out.println("8. Salir");
-                System.out.println("*******[DeparBank]*******");
+                System.out.println("\n*******[DeparBank]*******");
 
                 int menu = sc.nextInt();
 
@@ -56,19 +57,30 @@ public class DeparBank {
 
                     case 4:
 
-                        // construcción
+                        System.out.println("Saldo de la cuenta");
+                        cuenta.mostrarsaldo();
+
                         break;
                     case 5:
 
-                        // construcción
+                        System.out.println("Ingreso de efectivo"+
+                        "\nPor favor, indique la cantidad que va a ingresar");
+                        Double cantidad = sc.nextDouble();
+                        cuenta.ingreso(cantidad);
+
                         break;
                     case 6:
 
-                        // construcción
+                        System.out.println("Ingreso de efectivo"+
+                        "\nPor favor, indique la cantidad que va a retirar");
+                        cantidad = sc.nextDouble();
+                        cuenta.retirada(cantidad);
+
                         break;
                     case 7:
 
-                        // construcción
+                        cuenta.movimientos();
+
                         break;
                     case 8:
 
@@ -78,7 +90,7 @@ public class DeparBank {
                         exit = true;
                         break;
                     default:
-                        System.out.println("\nIntroduce una opción porfavor.");
+                        System.out.println("\n[ERROR]Seleccione una opción válida, porfavor.");
                         break;
                 }
             } while (!exit);
