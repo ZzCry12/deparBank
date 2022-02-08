@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class DeparBank {
 
     static Scanner sc = new Scanner(System.in);
+
     public static void main(String[] args) {
 
         boolean exit = false;
@@ -63,24 +64,23 @@ public class DeparBank {
                         break;
                     case 5:
 
-                        System.out.println("Ingreso de efectivo"+
-                        "\nPor favor, indique la cantidad que va a ingresar");
+                        System.out.println("Ingreso de efectivo" +
+                                "\nPor favor, indique la cantidad que va a ingresar");
                         Double cantidad = sc.nextDouble();
                         cuenta.ingreso(cantidad);
 
                         break;
                     case 6:
 
-                        System.out.println("Ingreso de efectivo"+
-                        "\nPor favor, indique la cantidad que va a retirar");
+                        System.out.println("Ingreso de efectivo" +
+                                "\nPor favor, indique la cantidad que va a retirar");
                         cantidad = sc.nextDouble();
                         cuenta.retirada(cantidad);
 
                         break;
                     case 7:
-
+                    
                         cuenta.movimientos();
-
                         break;
                     case 8:
 
