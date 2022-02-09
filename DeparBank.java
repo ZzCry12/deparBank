@@ -12,17 +12,21 @@ public class DeparBank {
 
         CuentaBancaria cuenta = new CuentaBancaria();
 
-        System.out.println("*******[DeparBank]*******");
+        System.out.println("*******[DeparBank BIENVENIDA]*******");
         System.out.println("Bienvenido a DeparBank (De Perduts al Riu Bank)"
-                + "\n\nPara continuar introduce tu Nombre y Apellidos, porfavor.");
+                + "\n\nPara continuar introduzca su nombre");
 
-        String titularcuenta = sc.nextLine();
+        String titularnombre = sc.nextLine();
 
-        System.out.println("*******[DeparBank]*******");
+        System.out.println("A continuación introduzca su apellido, porfavor");
+        String titularapelido = sc.nextLine();
 
-        cuenta.settitular(titularcuenta);
+        System.out.println("*******[DeparBank BIENVENIDA]*******");
 
-        if (cuenta.gettitular().equals(titularcuenta)) {
+        cuenta.settitularnombre(titularnombre);
+        cuenta.settitularapellido(titularapelido);
+
+        if (cuenta.gettitularnombre().equals(titularnombre) && cuenta.gettitularapellido().equals(titularapelido)) {
             do {
                 System.out.println("\n1. Datos de la cuenta");
                 System.out.println("2. IBAN");
@@ -53,7 +57,7 @@ public class DeparBank {
                     case 3:
 
                         System.out.println("Titular");
-                        cuenta.mostrartitular(titularcuenta);
+                        cuenta.mostrartitular(titularnombre, titularapelido);
                         break;
 
                     case 4:
@@ -72,14 +76,14 @@ public class DeparBank {
                         break;
                     case 6:
 
-                        System.out.println("Ingreso de efectivo" +
+                        System.out.println("Retirada de efectivo" +
                                 "\nPor favor, indique la cantidad que va a retirar");
                         cantidad = sc.nextDouble();
                         cuenta.retirada(cantidad);
 
                         break;
                     case 7:
-                    
+
                         cuenta.movimientos();
                         break;
                     case 8:
